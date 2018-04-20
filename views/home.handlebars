@@ -1,0 +1,29 @@
+<section id="app">
+  <div class="movie-wrapper">
+    <video autoplay controls>
+      <source src="video/{{ defaultMovie.movies_trailer }}" type="video/mp4">
+    </video>
+
+    <aside>
+      <h4 class="movie-title">{{ defaultMovie.movies_title }}</h4>
+      <span class="movie-year">
+        {{ defaultMovie.movies_year }} &nbsp;&bull;&nbsp; {{ defaultMovie.movies_runtime }}
+      </span>
+      <i class="movie-genre"> {{ defaultMovie.genre_name }}</i>
+    </aside>
+  </div>
+  <h3>Click the Genres to Show Movies</h3>
+  <!-- load in all of the thumnails for each genre -->
+  <section class="genre-lists" v-for="genre in genres">
+    <div v-if="genre.movies.length > 0">
+      <div class="genre-item">
+        <h6 class="genre-name"  v-on:click.self="show = !show">${ genre.name }</h6>
+        <div class="movie-list" v-for="movie in genre.movies" v-if="!show">
+          <a :href="'/movies/' + movie.movies_id + '/' + movie.movies_trailer">
+            <img class="movie-thumb" :src="'images/' + movie.movies_cover" :alt="movie.movies_title">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
