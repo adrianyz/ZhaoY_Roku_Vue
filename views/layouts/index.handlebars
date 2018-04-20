@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ title }}</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>	
+</head>
+<body>
+	<header>
+		<h2>Roku Fleshback</h2>
+	</header>
+
+	<main>
+		{{{ body }}}
+	</main>
+
+	<footer>
+		<span>Enjoying our site? Please follow us on sociale media!</span>
+		<p class="copy">
+			&copy; 2018 The Best Movie Review Site Evaaa!, Inc
+		</p>
+
+		<ul>
+			<li>
+				<i class="fab fa-facebook"></i>
+			</li>
+			<li>
+				<i class="fab fa-twitter-square"></i>
+			</li>
+			<li>
+				<i class="fab fa-google-plus-square"></i>
+			</li>
+			<li>
+				<i class="fab fa-instagram"></i>
+			</li>
+		</ul>
+	</footer>
+  <script>
+    var appData = {
+      movies : {{{ data }}}
+    }
+  </script>
+	{{#if mainpage}}
+  	<script src="/js/main.js"></script>
+	{{/if}}
+
+	{{#if videopage}}
+		<script src="/js/videoVM.js"></script>
+	{{/if}}
+</body>
+</html>
