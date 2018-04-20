@@ -6,7 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+	
 </head>
 <body>
 	<header>
@@ -23,7 +24,7 @@
 			&copy; 2018 The Best Movie Review Site Evaaa!, Inc
 		</p>
 
-		<ul>
+		{{!-- <ul>
 			<li>
 				<i class="fab fa-facebook"></i>
 			</li>
@@ -36,7 +37,26 @@
 			<li>
 				<i class="fab fa-instagram"></i>
 			</li>
-		</ul>
+		</ul> --}}
+		<social-sharing @open="open()" @change="change()" @close="close()">
+  <div>
+      <network network="facebook">
+        <i class="fab fa-facebook"></i> Facebook
+      </network>
+      <network network="linkedin">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </network>
+      <network network="pinterest">
+        <i class="fab fa-pinterest"></i> Pinterest
+      </network>
+      <network network="reddit">
+        <i class="fab fa-reddit"></i> Reddit
+      </network>
+      <network network="twitter">
+        <i class="fab fa-twitter"></i> Twitter
+      </network>
+  </div>
+</social-sharing>
 	</footer>
   <script>
     var appData = {
@@ -50,5 +70,6 @@
 	{{#if videopage}}
 		<script src="/js/videoVM.js"></script>
 	{{/if}}
+	<script src="/js/vue-social-sharing.js"></script>	
 </body>
 </html>
