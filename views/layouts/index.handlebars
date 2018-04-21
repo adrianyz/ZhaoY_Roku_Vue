@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>{{ title }}</title>
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
-	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+	 crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 </head>
+
 <body>
 	<header>
 		<h2>Roku Fleshback</h2>
@@ -18,11 +22,12 @@
 	</main>
 
 	<footer>
-		<span>Enjoying our site? Please follow us on sociale media!</span>
+		<h2>Enjoying our site? Please follow us on sociale media!</h2>
 		<p class="copy">
 			&copy; 2018 The Best Movie Review Site Evaaa!, Inc
 		</p>
 
+		{{!--
 		<ul>
 			<li>
 				<i class="fab fa-facebook"></i>
@@ -36,19 +41,35 @@
 			<li>
 				<i class="fab fa-instagram"></i>
 			</li>
-		</ul>
+		</ul> --}}
+		<social-sharing @open="open()" @change="change()" @close="close()" class="socialWrapper">
+			<div>
+				<network network="facebook" class="social">
+					<i class="fab fa-facebook"></i> Facebook
+				</network>
+				<network network="linkedin" class="social">
+					<i class="fab fa-linkedin"></i> LinkedIn
+				</network>
+				<network network="pinterest" class="social">
+					<i class="fab fa-pinterest"></i> Pinterest
+				</network>
+				<network network="reddit" class="social">
+					<i class="fab fa-reddit"></i> Reddit
+				</network>
+				<network network="twitter" class="social">
+					<i class="fab fa-twitter"></i> Twitter
+				</network>
+			</div>
+		</social-sharing>
 	</footer>
-  <script>
-    var appData = {
-      movies : {{{ data }}}
+	<script>
+		var appData = {
+			movies: {{{ data }}}
     }
-  </script>
-	{{#if mainpage}}
-  	<script src="/js/main.js"></script>
-	{{/if}}
-
-	{{#if videopage}}
-		<script src="/js/videoVM.js"></script>
-	{{/if}}
+	</script> {{#if mainpage}}
+	<script src="/js/main.js"></script> {{/if}} {{#if videopage}}
+	<script src="/js/videoVM.js"></script> {{/if}}
+	<script src="/js/vue-social-sharing.js"></script>
 </body>
+
 </html>

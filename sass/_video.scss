@@ -1,14 +1,19 @@
+$firstfont: 'Montserrat', sans-serif;
+
 .comments {
 	width: 45%;
 	display: inline-block;
-	>div {
+	div {
 		padding: 0 1em;
 		margin-bottom: 1.75em;
 	}
 }
 
 #video {
-	padding-top: 200px;
+	padding: 200px 0;
+	width:100vw;
+	position:relative;
+
 	video {
 		
 		margin-bottom: 1.5em;
@@ -19,6 +24,9 @@
 	a {
 		color: orangered;
 		margin-top: 50px;
+		position:absolute;
+		left:95%;
+		width:50px;
 	}
 }
 
