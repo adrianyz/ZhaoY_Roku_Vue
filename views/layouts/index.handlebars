@@ -41,7 +41,7 @@
 			<li>
 				<i class="fab fa-instagram"></i>
 			</li>
-		</ul> --}}
+		</ul> --}} {{!--
 		<social-sharing @open="open()" @change="change()" @close="close()" class="socialWrapper">
 			<div>
 				<network network="facebook" class="social">
@@ -60,16 +60,20 @@
 					<i class="fab fa-twitter"></i> Twitter
 				</network>
 			</div>
-		</social-sharing>
+		</social-sharing> --}}
+		<div id="socialShare">
+			<vue-goodshare-facebook button_design="outline"></vue-goodshare-facebook>
+		</div>
 	</footer>
 	<script>
 		var appData = {
 			movies: {{{ data }}}
     }
-	</script> {{#if mainpage}}
+	</script>
+	<script src="/js/vue-social-sharing.js"></script> {{#if mainpage}}
 	<script src="/js/main.js"></script> {{/if}} {{#if videopage}}
 	<script src="/js/videoVM.js"></script> {{/if}}
-	<script src="/js/vue-social-sharing.js"></script>
+
 </body>
 
 </html>

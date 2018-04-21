@@ -1,3 +1,5 @@
+
+
 const myApp = {
   // some non-VM functionality would go here -> split the movies into genres using Vue
   movieGenres(data, genres) {
@@ -8,6 +10,8 @@ const myApp = {
       })
     })
   },
+
+  
 
   vm : new Vue({
     el : "#app",

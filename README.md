@@ -24,5 +24,6 @@ And the application will be running on localhost: 3000
 
 * handlebars
 * vue.js
+* [goodshare.js] (https://koddr.github.io/vue-goodshare/en/)
 
 
