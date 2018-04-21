@@ -10,9 +10,11 @@
         {{ defaultMovie.movies_year }} &nbsp;&bull;&nbsp; {{ defaultMovie.movies_runtime }}
       </span>
       <i class="movie-genre"> {{ defaultMovie.genre_name }}</i>
+      <p class="movie-desc">{{ defaultMovie.movies_storyline }}</p>
     </aside>
   </div>
-  <h3>Click the Genres to Show Movies</h3>
+  <div class="selectGenre">
+  <h3>Click on the genre below to leave a review for selected movie</h3>
   <!-- load in all of the thumnails for each genre -->
   <section class="genre-lists" v-for="genre in genres">
     <div v-if="genre.movies.length > 0">
@@ -26,4 +28,5 @@
       </div>
     </div>
   </section>
+  </div>
 </section>
